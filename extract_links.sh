@@ -1,14 +1,30 @@
 #!/bin/bash
 
-if [ "$#" -ne 1 ]; then
-  echo "Usage: $0 input_file"
-  exit 1
+# Check if the input file is provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 input_file"
+    exit 1
 fi
 
+# Input file
 input_file="$1"
-output_file="${input_file%.*}_links.txt"
 
-# Use grep with a regular expression to find all links starting with "https" and ending with an endline
-grep -oP 'https://[^\ ]*' "$input_file" | sed 's/^/- /' > "$output_file"
+# Output file
+output_file="links.txt"
 
-echo "Links extracted and saved to $output_file"
+# Empty the output file
+> $output_file
+
+# Read the input file line by line
+while IFS= read -r line
+do
+ # Check if the line is a link
+ if [[ $line =~ ^https.* ]]; then
+   # Get the next to next line
+   read -r title
+   read -r next_title
+
+   # Format the output and append to the output file
+   echo "- [$next_title]($line)" >> $output_file
+ fi
+done < "$input_file"
