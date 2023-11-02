@@ -1,30 +1,34 @@
 #!/bin/bash
 
-# Check if the input file is provided
-if [ -z "$1" ]; then
-    echo "Usage: $0 input_file"
-    exit 1
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 input_file"
+  exit 1
 fi
 
-# Input file
 input_file="$1"
-
-# Output file
-output_file="links.txt"
+output_file="${input_file%.*}_links.md"
 
 # Empty the output file
 > $output_file
 
-# Read the input file line by line
-while IFS= read -r line
-do
- # Check if the line is a link
- if [[ $line =~ ^https.* ]]; then
-   # Get the next to next line
-   read -r title
-   read -r next_title
+# Use a regular expression to find links starting with "https" and ending with a space
+regex="https[^\ ]+"
 
-   # Format the output and append to the output file
-   echo "- [$next_title]($line)" >> $output_file
- fi
+while read -r line; do
+  if [[ $line =~ $regex ]]; then
+    link="${BASH_REMATCH[0]}"
+    # Read the next line to get the title
+    read -r discard
+    read -r title
+    # Write the title and link in the desired format to the output file
+    
+    # if the title is blank
+    if [[ $title =~ "^$" ]]; then
+      echo "- $link" >> "$output_file"
+    else
+      echo "- [$title]($link)" >> "$output_file"
+    fi
+  fi
 done < "$input_file"
+
+echo "Links extracted and saved to $output_file"
