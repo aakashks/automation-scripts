@@ -24,14 +24,10 @@ while read -r line; do
     # Read the next line to get the title
     read -r discard
     read -r title
+
     # Write the title and link in the desired format to the output file
+    echo "- [$title]($link)" >> "$output_file"
     
-    # if the title is blank
-    if [[ "$title" =~ ^$'\n'$ ]]; then
-      echo "- $link" >> "$output_file"
-    else
-      echo "- [$title]($link)" >> "$output_file"
-    fi
   fi
 done < "$input_file"
 
