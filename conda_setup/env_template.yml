@@ -1,0 +1,47 @@
+name: py311 # set name
+channels:
+  - defaults
+  - conda-forge
+
+dependencies:
+  - python=3.11 # python version
+  - pip
+
+# necessary
+  - beautifulsoup4
+  - decorator
+  - imageio
+  - ipykernel
+  - joblib
+  - jupyter
+  - jupyterlab
+  - matplotlib
+  - nbdime
+  - notebook
+  - numpy
+  - openssl
+  - pillow
+  - scikit-image
+  - scikit-learn
+  - scipy
+  - seaborn
+  - statsmodels
+  - tqdm
+  - typing
+
+# Specific Use
+  - plotly
+  # - imbalanced-learn
+  # - yfinance
+  # - rich   # colorful CLI outputs
+  # - opencv
+  # - polars # faster dataframes
+
+# GB Trees
+  - xgboost
+  - catboost
+
+# loggers and HPT
+  - optuna
+  # - mlflow
+  - conda-forge::tensorboard
