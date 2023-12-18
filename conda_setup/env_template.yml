@@ -8,9 +8,7 @@ dependencies:
   - pip
 
 # necessary
-  - beautifulsoup4
   - decorator
-  - imageio
   - ipykernel
   - joblib
   - jupyter
@@ -20,8 +18,11 @@ dependencies:
   - notebook
   - numpy
   - openssl
+
+# often used
+  - beautifulsoup4
+  - imageio
   - pillow
-  - scikit-image
   - scikit-learn
   - scipy
   - seaborn
@@ -30,12 +31,14 @@ dependencies:
   - typing
 
 # Specific Use
-  - plotly
+  - plotly    # better plots
+  - scikit-image
+  # - opencv
   # - imbalanced-learn
   # - yfinance
-  # - rich   # colorful CLI outputs
-  # - opencv
-  # - polars # faster dataframes
+  # - rich      # colorful CLI outputs
+  # - polars    # faster dataframes
+  # - papermill   # parameterize, execute and store results of juptyer notebooks
 
 # GB Trees
   - xgboost
@@ -43,5 +46,5 @@ dependencies:
 
 # loggers and HPT
   - optuna
-  # - mlflow
-  - conda-forge::tensorboard
+  - tensorboard
+  # - wandb
