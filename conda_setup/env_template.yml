@@ -32,14 +32,16 @@ dependencies:
 
 # Specific Use
   - plotly    # better plots
-  - scikit-image
+  # - scikit-image
   # - opencv
   # - imbalanced-learn
   # - yfinance
   # - rich      # colorful CLI outputs
   # - polars    # faster dataframes
   # - papermill   # parameterize, execute and store results of juptyer notebooks
-
+  # - hydra   # configuration management
+  # - python-duckdb # easy SQL
+  
 # GB Trees
   - xgboost
   - catboost
