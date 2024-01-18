@@ -21,8 +21,6 @@ dependencies:
 
 # often used
   - beautifulsoup4
-  - imageio
-  - pillow
   - scikit-learn
   - scipy
   - seaborn
@@ -30,10 +28,15 @@ dependencies:
   - tqdm
   - typing
 
+# CV
+  - albumentations
+  - opencv
+  - scikit-image
+  - pillow
+  - imageio
+
 # Specific Use
   - plotly    # better plots
-  # - scikit-image
-  # - opencv
   # - imbalanced-learn
   # - yfinance
   # - rich      # colorful CLI outputs
