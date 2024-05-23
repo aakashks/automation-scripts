@@ -1,7 +1,7 @@
 # it is always best to create from a complete script only
 
-conda create -n pytorch python=3.11 -y
-conda activate pytorch
+conda create -n py311 python=3.11 -y
+conda activate py311
 
 # you must first install pytorch only
 # check cuda version: nvcc -V
