@@ -1,3 +1,4 @@
+# removing existing conda installation
 # sudo rm -rf /opt/conda
 
 mkdir -p ~/miniconda3
