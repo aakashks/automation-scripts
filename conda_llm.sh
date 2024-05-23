@@ -1,7 +1,7 @@
 # it is always best to create from a complete script only
 
-conda create -n py311 python=3.11 -y
-conda activate py311
+conda create -n pytorch python=3.11 -y
+conda activate pytorch
 
 # you must first install pytorch only
 # check cuda version: nvcc -V
@@ -9,7 +9,7 @@ conda activate py311
 # assuming latest compatible cuda version
 
 conda install pytorch torchvision pytorch-cuda=12.1 -c pytorch -c nvidia -y
-conda install jupyterlab seaborn pandas -y
+conda install jupyterlab notebook seaborn pandas -y
 # install other libraries from conda which conda resolves easily
 # conda install scikit-learn -y
 
