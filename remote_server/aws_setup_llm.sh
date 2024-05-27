@@ -1,7 +1,10 @@
 echo "alias ll='ls -hlAF'" >> ~/.bashrc
 echo "alias jn='jupyter notebook --no-browser --port=8080 --NotebookApp.allow_origin='*' --NotebookApp.ip='0.0.0.0''" >> ~/.bashrc
 
+# for aws linux
 sudo yum install -y htop
+
+# for ubuntu snap can be used
 
 # reinstall conda if needed
 sudo rm -rf /opt/conda
@@ -28,8 +31,8 @@ pip install uv
 uv pip install gpustat
 
 uv pip install vllm
-uv pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu121
-uv pip install flash-attn --no-build-isolation
+# uv pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu121    # I prefer using vllm
+uv pip install flash-attn --no-build-isolation  # see which gpus it supports
 uv pip install langchain langchain-community langgraph langchain-huggingface langchain-openai
 uv pip install accelerate transformers bitsandbytes
 
