@@ -30,11 +30,11 @@ conda install jupyterlab notebook seaborn pandas -y
 pip install uv
 uv pip install gpustat
 
-uv pip install vllm
-# uv pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu121    # I prefer using vllm
+uv pip install vllm      # I prefer using vllm. you can also use exllamav2 or aphrodite or llama-cpp-python
+# uv pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu121
 uv pip install flash-attn --no-build-isolation  # see which gpus it supports
 uv pip install langchain langchain-community langgraph langchain-huggingface langchain-openai
-uv pip install accelerate transformers bitsandbytes
+uv pip install accelerate transformers bitsandbytes trl peft datasets wandb
 
 mkdir workspace
 cd workspace
